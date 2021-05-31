@@ -1,0 +1,29 @@
+.main-warranty {
+	.news-list {
+		.warranty-btn {
+			display: none;
+		}
+	}
+}
+.warranty-btn {
+	.main-btn {
+		width: 100%;
+		height: 4.4rem;
+		line-height: 2.4rem;
+	}
+}
+@include max-media($bk-d-992) {
+	.main-warranty {
+		.news-aside-item:first-child {
+			display: none;
+			+ .news-aside-item {
+				margin-top: 0;
+			}
+		}
+		.news-list {
+			.warranty-btn {
+				display: block;
+			}
+		}
+	}
+}

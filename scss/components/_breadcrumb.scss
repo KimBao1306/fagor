@@ -1,0 +1,64 @@
+.sec-breadcrumb {
+	overflow: hidden;
+	padding: 3rem 0;
+}
+.sec-breadcrumb-inner {
+	display: flex;
+	align-items: center;
+	color: $five-cl;
+
+	> p {
+		margin-right: 2rem;
+	}
+}
+.breadcrumb {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	li {
+		position: relative;
+		&::after {
+			content: '/';
+			position: absolute;
+			top: 50%;
+			right: 0.6rem;
+			transform: translateY(-50%);
+			font-size: 1.6rem;
+		}
+		&.--active {
+			a,
+			span {
+				color: $t-b-cl;
+			}
+		}
+	}
+	li:last-child {
+		&::after {
+			display: none;
+		}
+	}
+	a {
+		display: block;
+		padding-right: 1.5rem;
+		transition: $t1 $cubic1;
+		&:hover {
+			color: $main-cl;
+			path {
+				fill: $main-cl;
+			}
+		}
+	}
+
+	svg {
+		display: block;
+	}
+	path {
+		fill: $five-cl;
+		transition: $t1;
+	}
+}
+@include max-media($bk-d-768) {
+	.sec-breadcrumb {
+		padding: 2rem 0;
+	}
+}

@@ -1,0 +1,22 @@
+.services {
+	overflow: hidden;
+	padding-bottom: 20rem;
+	.main-title {
+		color: #626e7c;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid rgba($color: #707070, $alpha: 0.2);
+	}
+}
+.services-qs {
+	.qs-item:last-child {
+		margin-bottom: 0;
+	}
+	.title {
+		color: #626e7c;
+	}
+}
+@include max-media($bk-d-1200) {
+	.services {
+		padding-bottom: 4rem;
+	}
+}

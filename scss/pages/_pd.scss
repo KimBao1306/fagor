@@ -1,0 +1,398 @@
+/*SP GỢI Ý*/
+.recommend {
+	overflow: hidden;
+}
+.recommend-wrap {
+	padding: 2.5rem 4rem;
+	border: 1px solid $border-cl;
+	.swiper-slide {
+		width: calc(100% / 3);
+	}
+	.c-pd {
+		padding: 0 6.25rem;
+	}
+	.c-pd-img {
+		// padding-bottom: 46%;
+	}
+	.c-pd-title {
+		margin-bottom: 0;
+	}
+}
+@include max-media($bk-d-1600) {
+	.recommend-wrap {
+		.c-pd {
+			padding: 0 3.125rem;
+		}
+	}
+}
+@include max-media($bk-d-1200) {
+	.recommend-wrap {
+		padding: 1.5rem;
+		.c-pd {
+			padding: 0;
+		}
+	}
+}
+@include max-media($bk-d-992) {
+	.recommend-wrap {
+		.swiper-slide {
+			width: 50%;
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.recommend-wrap {
+		.swiper-slide {
+			width: 100%;
+		}
+	}
+}
+
+/*PRODUCT*/
+.pd {
+	.left {
+		width: 25%;
+	}
+	.right {
+		width: 75%;
+	}
+}
+.pd-title {
+	display: flex;
+	align-items: center;
+	padding: 1.5rem 0;
+	border-bottom: 1px solid $border-cl;
+	> p {
+		position: absolute;
+	}
+}
+.pd-pagination {
+	margin: auto;
+	.pagination {
+		margin-top: 0;
+		font-size: 1.4rem;
+		a {
+			color: $second-cl;
+		}
+		li:last-child a {
+			font-size: 0.8rem;
+		}
+	}
+}
+.pd-list {
+	overflow: hidden;
+	padding-left: 4rem;
+	.col {
+		width: calc(100% / 3);
+	}
+}
+@include max-media($bk-d-1200) {
+	.pd {
+		.left,
+		.right {
+			width: 100%;
+		}
+		.left {
+			padding: 0;
+		}
+	}
+	.pd-list {
+		padding-left: 0;
+	}
+}
+@include max-media($bk-d-992) {
+	.pd-list {
+		.col {
+			width: 50%;
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.pd-title {
+		> p {
+			position: static;
+		}
+	}
+	.pd-pagination {
+		margin-right: 0;
+	}
+	.pd-list {
+		.col {
+			width: 100%;
+		}
+	}
+	.pd {
+		position: relative;
+		.cols {
+			position: static;
+		}
+	}
+}
+/*PD FILTER*/
+.pd-filter {
+	height: 100%;
+}
+.pd-filter-wrap {
+	height: 100%;
+	padding: 2.5rem 0;
+	border-radius: 0.6rem;
+	background-color: $third-cl;
+}
+.pd-filter-title {
+	display: flex;
+	align-items: center;
+	padding: 0 3rem;
+	.fa {
+		color: $five-cl;
+		font-size: 1.6rem;
+		margin-right: 1rem;
+	}
+}
+.pd-filter-list {
+	position: sticky;
+	top: 10rem;
+	padding: 0 1.5rem;
+}
+.pd-filter-item {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	.title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: $bg-w-cl;
+		padding: 1rem 1.5rem;
+		border-radius: 99rem;
+		cursor: pointer;
+		.fa {
+			font-size: 2rem;
+		}
+	}
+	.list {
+		padding-top: 1.5rem;
+		padding-left: 1.5rem;
+		display: none;
+		> div {
+			~ div {
+				margin-top: 1rem;
+			}
+		}
+	}
+	~ .pd-filter-item {
+		margin-top: 1.5rem;
+	}
+	&.--active {
+		.list {
+			display: block;
+		}
+	}
+}
+.pd-filter-close {
+	position: absolute;
+	top: 0;
+	left: 30rem;
+	z-index: 991;
+	width: 4rem;
+	height: 4rem;
+	line-height: 4rem;
+	text-align: center;
+	background-color: $third-cl;
+	display: none;
+}
+.pd-filter-mobile {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10;
+	height: 100%;
+	display: none;
+	pointer-events: none;
+	&-wrap {
+		position: sticky;
+		top: 10rem;
+		right: 0;
+		padding: 0.5rem;
+		background-color: $main-cl;
+		border-radius: 0.6rem 0 0 0.6rem;
+		writing-mode: vertical-lr;
+		text-align: center;
+		min-height: 10rem;
+		min-width: 3rem;
+		color: $t-w-cl;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.3s;
+		box-shadow: 1rem 1rem 3rem rgba($color: $bg-b-cl, $alpha: 0.16);
+		pointer-events: auto;
+		p {
+			font-size: 1.2rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+			vertical-align: middle;
+			margin-top: 1rem;
+		}
+	}
+}
+
+@include max-media($bk-d-1200) {
+	.pd-filter {
+		position: fixed;
+		top: 0;
+		right: 100%;
+		width: 100vw;
+		height: 100%;
+		z-index: 990;
+		transition: $t1;
+		&.--active {
+			right: 0;
+		}
+	}
+	.pd-filter-wrap {
+		position: relative;
+		border-radius: 0;
+		z-index: 991;
+		max-width: 30rem;
+	}
+	.pd-filter-list {
+		position: static;
+		height: calc(var(--browser-vh, 1vh) * 100 - 13rem);
+		overflow: hidden auto;
+		@include custom-scrollbar(0.3rem);
+	}
+	.pd-filter-close {
+		display: block;
+	}
+	.pd-filter-mobile {
+		display: block;
+	}
+}
+
+/*PD COMPARE*/
+.select-compare {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 800;
+	width: 100%;
+	min-height: 20rem;
+	border-top: 1px solid $border-cl;
+	background-color: $third-cl;
+	transition: $t1;
+	&-wrap {
+		display: flex;
+	}
+	&-title {
+		width: 40rem;
+	}
+	&-list {
+		width: calc(100% - 40rem);
+		flex-grow: 1;
+		padding-left: 3rem;
+		display: flex;
+		.item {
+			position: relative;
+			width: calc(25% - 1rem);
+			margin-left: 1rem;
+			padding: 1rem;
+			text-align: center;
+			border: 1px solid $border-cl;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+		.img {
+			margin: auto;
+			width: 15rem;
+			height: 15rem;
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		.remove {
+			position: absolute;
+			top: 0.5rem;
+			right: 1rem;
+			background-color: $bg-w-cl;
+			border-radius: 99rem;
+		}
+	}
+	&-action {
+		position: absolute;
+		top: -4rem;
+		width: 4rem;
+		height: 4rem;
+		font-size: 2rem;
+		border: 1px solid $border-cl;
+		border-bottom: 0;
+		background-color: $third-cl;
+		cursor: pointer;
+		@include mid-flex;
+	}
+	&-hide {
+		right: 4rem;
+	}
+	&-close {
+		right: 0;
+		border-left: 0;
+	}
+	&.--hidden {
+		transform: translateY(100%);
+		.select-compare-hide .fa {
+			transform: rotate(180deg);
+		}
+	}
+	&.--close {
+		transform: translateY(calc(100% + 4rem));
+	}
+}
+@include max-media($bk-d-1200) {
+	.select-compare {
+		&-wrap {
+			padding: 2rem 0;
+		}
+		&-title {
+			width: 20rem;
+		}
+		&-list {
+			width: calc(100% - 20rem);
+			padding-left: 1.5rem;
+		}
+	}
+}
+@include max-media($bk-d-992) {
+	.select-compare {
+		&-list {
+			overflow: auto hidden;
+			scroll-snap-type: x mandatory;
+			@include custom-vertical-scrollbar(3px);
+			.item {
+				scroll-snap-align: start;
+				width: auto;
+				flex-shrink: 0;
+			}
+		}
+		&-item {
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.select-compare {
+		&-wrap {
+			flex-wrap: wrap;
+		}
+		&-title {
+			width: 100%;
+		}
+		&-list {
+			width: 100%;
+			padding-left: 0;
+			padding-top: 1rem;
+		}
+	}
+}

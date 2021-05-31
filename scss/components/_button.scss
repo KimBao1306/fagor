@@ -1,0 +1,199 @@
+.main-btn {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 1rem 2rem;
+	color: $t-w-cl;
+	background-color: $main-cl;
+	z-index: 1;
+	overflow: hidden;
+	cursor: pointer;
+	transition: $t1;
+	outline: none;
+	border: 0;
+	border-radius: 99rem;
+	font-size: 1.4rem;
+	border: 1px solid transparent;
+	text-align: center;
+	&:hover {
+		color: $main-cl;
+		background-color: $bg-w-cl;
+		box-shadow: 1rem 1rem 3rem rgba($color: $bg-b-cl, $alpha: 0.16);
+		border-color: $main-cl;
+	}
+	&:active {
+		background-color: rgba($color: $bg-w-cl, $alpha: 0.6);
+	}
+	&.btn-icon {
+		display: flex;
+		align-items: center;
+		img {
+			transition: $t1;
+			margin-right: 0.7rem;
+			filter: brightness(0) invert(1);
+		}
+		&:hover {
+			img {
+				filter: none;
+			}
+		}
+	}
+	&.btn-border {
+		background-color: transparent;
+		color: $main-cl;
+		border-color: $main-cl;
+		&:hover {
+			background-color: $main-cl;
+			color: $t-w-cl;
+		}
+	}
+}
+
+.readmore-btn {
+	position: relative;
+	font-weight: bold;
+	color: $main-cl;
+	transition: $t1;
+	font-size: 1.4rem;
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 0.1rem;
+		background-color: $second-cl;
+		transition: $t1;
+	}
+	&:hover {
+		color: $second-cl;
+		&:before {
+			width: 100%;
+		}
+	}
+}
+
+.hamburger-btn {
+	position: relative;
+	width: 4rem;
+	height: 3rem;
+	overflow: hidden;
+	cursor: pointer;
+	> span {
+		display: block;
+		position: absolute;
+		height: 0.2rem;
+		width: 100%;
+		background: $main-cl;
+		opacity: 1;
+		left: 0;
+		border-radius: 2rem;
+		transition: all $t2 cubic-bezier(0.83, 0.135, 0.02, 1.015);
+		&:nth-child(1) {
+			top: 0.6rem;
+		}
+		&:nth-child(2),
+		&:nth-child(3) {
+			top: 1.4rem;
+		}
+		&:nth-child(4) {
+			bottom: 0.6rem;
+		}
+	}
+	&:hover {
+		> span {
+			&:nth-child(1) {
+				transform: translateY(-0.3rem);
+			}
+			&:nth-child(4) {
+				transform: translateY(0.3rem);
+			}
+		}
+	}
+	&.--active {
+		> span {
+			&:nth-child(1),
+			&:nth-child(4) {
+				left: 50%;
+				width: 0;
+				transform: scale(0);
+			}
+			&:nth-child(1) {
+				top: 1.5rem;
+			}
+			&:nth-child(2) {
+				transform: rotate(45deg);
+			}
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+			&:nth-child(4) {
+				bottom: 1.5rem;
+			}
+		}
+	}
+	@include max-media($bk-d-992) {
+		width: 3rem;
+	}
+}
+
+.video-btn,
+.video-popup {
+	display: block;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba($color: $bg-b-cl, $alpha: 0.5);
+		z-index: 2;
+		pointer-events: none;
+	}
+	&:after {
+		content: '';
+		@include mid;
+		width: 4rem;
+		height: 4rem;
+		background-image: url(../images/video-btn.png);
+		background-size: 4rem auto;
+		background-repeat: no-repeat;
+		background-position: center center;
+		z-index: 2;
+		border-radius: 99rem;
+		animation: pulse 3s infinite;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		pointer-events: auto;
+		cursor: pointer;
+	}
+}
+
+.scroll-top {
+	position: fixed;
+	right: 1.5rem;
+	bottom: 12rem;
+	width: 4rem;
+	height: 4rem;
+	z-index: 899;
+	font-size: 1.4rem;
+	border-radius: 0.5rem;
+	background-color: $main-cl;
+	border: 1px solid $main-cl;
+	color: $t-w-cl;
+	box-shadow: 0 0.5rem 1.5rem 0 rgba($color: $bg-b-cl, $alpha: 0.2);
+	cursor: pointer;
+	transition: $t2 $cubic1;
+	transform: translateY(1rem);
+	@include hidden;
+	@include mid-flex;
+
+	&.--show {
+		transform: translateY(0);
+		@include visible;
+	}
+}

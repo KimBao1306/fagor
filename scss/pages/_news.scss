@@ -1,0 +1,81 @@
+.news {
+	overflow: hidden;
+	.cols {
+		justify-content: space-between;
+	}
+	.left {
+		position: relative;
+		width: 70%;
+		@include min-media($bk-1600) {
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: -5rem;
+				width: 0.1rem;
+				height: 100%;
+				background-color: $border-cl;
+			}
+		}
+	}
+	.right {
+		width: calc(30% - 8rem);
+	}
+}
+.news-list {
+}
+.news-list-item {
+	padding-bottom: 3rem;
+	margin-bottom: 3rem;
+	border-bottom: 1px solid $border-cl;
+}
+.news-pagination {
+	.pagination {
+		li {
+			.fa {
+				color: #127226;
+				transition: $t1;
+			}
+			&:first-child {
+				margin-right: 3rem;
+				.fa {
+					margin-right: 0.5rem;
+				}
+				&:hover {
+					.fa {
+						transform: translateX(-0.2rem);
+					}
+				}
+			}
+			&:last-child {
+				margin-left: 3rem;
+				.fa {
+					margin-left: 0.5rem;
+				}
+				&:hover {
+					.fa {
+						transform: translateX(0.2rem);
+					}
+				}
+			}
+		}
+	}
+}
+@include max-media($bk-d-1600) {
+	.news {
+		.right {
+			width: 30%;
+		}
+	}
+}
+@include max-media($bk-d-992) {
+	.news {
+		.col {
+			width: 100%;
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.news {
+	}
+}

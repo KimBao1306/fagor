@@ -1,0 +1,261 @@
+.home-pd {
+	padding-bottom: 3rem;
+	.pd-info-title {
+		text-align: center;
+	}
+	.swiper-button-wrap {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: auto;
+		transform: none;
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
+		background-color: $third-cl;
+
+		&:hover {
+			color: $main-cl;
+			background-color: #e5e7eb;
+		}
+	}
+	.swiper-container {
+		padding: 3rem;
+	}
+	.swiper-slide {
+		width: calc(100% / 7);
+	}
+}
+.home-pd-item {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	transition: $t1;
+	padding: 1rem;
+	border-radius: 0.6rem;
+	.main-title {
+		position: relative;
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 3rem;
+			height: 0.1rem;
+			background-color: $main-cl;
+			transition: $t1;
+		}
+	}
+	.list {
+		transition: $t1;
+		margin-bottom: 4rem;
+	}
+	.img {
+		margin-top: auto;
+		img {
+			height: 100%;
+			transition: $t1;
+			object-fit: cover;
+		}
+	}
+
+	&:hover {
+		background-color: $bg-w-cl;
+		box-shadow: inset 1rem 1rem 3rem rgba($color: $bg-b-cl, $alpha: 0.16),
+			1rem 1rem 3rem rgba($color: $bg-b-cl, $alpha: 0.16);
+		.main-title {
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+}
+@include max-media($bk-d-1200) {
+	.home-pd {
+		.pd-info-title {
+			text-align: left;
+		}
+		.swiper-button-wrap {
+			position: static;
+			justify-content: flex-end;
+		}
+		.swiper-slide {
+			width: calc(100% / 5);
+		}
+	}
+}
+@include max-media($bk-d-992) {
+	.home-pd {
+		.swiper-slide {
+			width: calc(100% / 3);
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.home-pd {
+		padding-bottom: 1rem;
+		.pd-info-title {
+			padding: 0 1.5rem;
+		}
+		.container {
+			padding: 0;
+		}
+		.swiper-container {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+		.swiper-slide {
+			width: 50%;
+		}
+	}
+}
+/**/
+.home-sec {
+	overflow: hidden;
+}
+.home-sec-item {
+	background-color: $third-cl;
+	.cols {
+		margin: 0;
+	}
+	.col {
+		padding: 0;
+		width: 50%;
+	}
+	&:nth-child(even) {
+		.cols {
+			flex-direction: row-reverse;
+		}
+	}
+}
+.home-sec-content {
+	height: 100%;
+	padding: 8rem 12rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	.center-btn {
+		text-decoration: underline;
+		.fa {
+			margin-left: 2.5rem;
+			color: $main-cl;
+		}
+	}
+}
+.manual-form {
+	.f-group {
+		margin-bottom: 2.5rem;
+	}
+	.f-label {
+		display: block;
+		margin-bottom: 1rem;
+	}
+	.f-submit {
+		text-align: right;
+		.btn {
+			display: inline-flex;
+			font-weight: bold;
+			font-size: 1.4rem;
+			color: $main-cl;
+			align-items: center;
+			background-color: transparent;
+			border: 0;
+			cursor: pointer;
+			transition: $t1;
+			padding: 0.5rem;
+			border-radius: 0.6rem;
+			&:hover {
+				.fa {
+					transform: translateX(0.5rem);
+				}
+				.icon {
+					background-color: $main-cl;
+					color: $t-w-cl;
+				}
+			}
+		}
+		.icon {
+			width: 5rem;
+			height: 5rem;
+			margin-left: 2rem;
+			border-radius: 99rem;
+			background-color: $bg-w-cl;
+			color: $main-cl;
+			line-height: 5rem;
+			text-align: center;
+			transition: $t1;
+			.fa {
+				transition: transform $t1;
+			}
+		}
+	}
+	.select2-js + .select2-container .select2-selection--single {
+		border: 0;
+		height: 4rem;
+		font-size: 1.4rem;
+		.select2-selection__rendered {
+			color: $second-cl;
+			line-height: 4rem;
+			background-image: url(../images/icon-select-red.svg);
+		}
+	}
+}
+.home-sec-img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.content {
+		position: absolute;
+		left: 6.5rem;
+		bottom: -6.5rem;
+		z-index: 2;
+		padding: 4rem;
+		color: $t-w-cl;
+		width: 51rem;
+		background-color: $main-cl;
+	}
+	.desc {
+		p {
+			@include overtext(6);
+		}
+	}
+}
+@include max-media($bk-d-1200) {
+	.home-sec-content {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+	.home-sec-img {
+		.content {
+			left: 0;
+			width: auto;
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.home-sec-item {
+		.col {
+			width: 100%;
+		}
+	}
+	.home-sec-content {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	.home-sec-img {
+		height: auto;
+		.content {
+			position: static;
+			p {
+				display: block;
+			}
+		}
+	}
+} ;

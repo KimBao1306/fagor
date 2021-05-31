@@ -1,0 +1,30 @@
+.pagination {
+	margin-top: 3rem;
+	text-align: center;
+	color: $t-b-cl;
+	font-size: 1.2rem;
+	font-weight: bold;
+	li {
+		text-transform: uppercase;
+		display: inline-block;
+		vertical-align: middle;
+		.page-numbers {
+			width: 2.4rem;
+			height: 2.4rem;
+			border-radius: 100%;
+			transition: $t1;
+			@include mid-flex;
+			&.current {
+				background-color: $main-cl;
+				color: $t-w-cl;
+			}
+			&:hover {
+				background-color: $main-cl;
+				color: $t-w-cl;
+			}
+		}
+	}
+	a {
+		transition: $t1;
+	}
+}

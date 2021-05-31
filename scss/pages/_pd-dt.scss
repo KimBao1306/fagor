@@ -1,0 +1,326 @@
+/*PRODUCT DETAIL*/
+.pd-dt {
+	overflow: hidden;
+	padding-top: 4rem;
+	.col {
+		width: 50%;
+	}
+	.pd-dt-price {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin-bottom: 1rem;
+		.title.tt-36 {
+			width: 100%;
+			@include fz-36;
+		}
+		.price {
+			font-size: 1.4rem;
+		}
+		> p:nth-child(n + 2) {
+			display: block;
+			width: auto;
+		}
+		> p:nth-child(3) {
+			margin: 0 2rem;
+		}
+	}
+}
+.pd-dt-slider {
+	padding: 0 9rem;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	.swiper-wrapper {
+		margin: 0;
+	}
+	.swiper-slide {
+		padding: 0;
+		border: 1px solid transparent;
+	}
+	.swiper-container {
+		height: 40rem;
+	}
+}
+.pd-dt-img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: auto;
+		height: auto;
+		max-height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+}
+.slider-detail {
+	width: 40.6rem;
+	.pd-dt-img {
+		padding-bottom: 100%;
+		cursor: zoom-in;
+	}
+}
+.slider-detail-thumbs {
+	width: 6rem;
+	flex-shrink: 0;
+	.pd-dt-img {
+		padding-bottom: 100%;
+	}
+	.swiper-slide-thumb-active {
+		border-color: $main-cl;
+	}
+}
+@include max-media($bk-d-1200) {
+	.pd-dt {
+	}
+	.pd-dt-slider {
+		padding: 0;
+	}
+}
+@include max-media($bk-d-992) {
+	.pd-dt {
+		padding-top: 0;
+		.col {
+			width: 100%;
+		}
+	}
+	.pd-dt-slider {
+		flex-wrap: wrap;
+	}
+	.slider-detail {
+		width: calc(100% - 9rem);
+		.pd-dt-img {
+			padding-bottom: 62%;
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.pd-dt-slider {
+		.swiper-container {
+			height: auto;
+		}
+	}
+	.slider-detail {
+		width: 100%;
+	}
+	.slider-detail-thumbs {
+		padding-top: 2rem;
+		width: 100%;
+	}
+	.pd-dt-content {
+		.c-pd-compare {
+			padding-top: 0;
+		}
+	}
+}
+/*MÔ TẢ SẢN PHẨM*/
+.pd-info {
+	background-color: $third-cl;
+}
+.pd-info-list {
+	overflow: hidden;
+	.swiper-wrapper {
+		flex-wrap: wrap;
+		margin: -2.5rem;
+	}
+	.swiper-slide {
+		padding: 2.5rem;
+		width: calc(100% / 3);
+	}
+	.swiper-button-wrap {
+		display: none;
+	}
+}
+.pd-info-title {
+	position: relative;
+}
+.pd-info-item {
+	.img {
+		position: relative;
+		padding-bottom: 2rem;
+	}
+	.img-main {
+		position: relative;
+		padding-bottom: 68%;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.tag {
+		position: absolute;
+		left: 1.5rem;
+		bottom: 0;
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+	.content {
+		padding-top: 2rem;
+		.title {
+			color: $t-b-cl;
+			@include overtext(2);
+		}
+		.desc {
+			font-size: 1.4rem;
+			@include lh(24, 14);
+		}
+	}
+}
+
+@include max-media($bk-d-1200) {
+	.pd-info-list {
+		.swiper-wrapper {
+			margin: -1.5rem;
+		}
+		.swiper-slide {
+			padding: 1.5rem;
+		}
+	}
+}
+@include max-media($bk-d-992) {
+	.pd-info-title {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		> * {
+			width: 49%;
+		}
+	}
+
+	.pd-info-list {
+		.swiper-wrapper {
+			flex-wrap: nowrap;
+		}
+		.swiper-slide {
+			width: 50%;
+		}
+
+		.swiper-button-wrap {
+			position: static;
+			transform: none;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.pd-info-title {
+		> * {
+			width: 100%;
+		}
+	}
+	.pd-info-list {
+		.swiper-slide {
+			width: 100%;
+		}
+	}
+}
+/*SẢN PHẨM CHI TIẾT*/
+.pd-desc {
+}
+.pd-desc-wrap {
+}
+.pd-desc-list {
+	border-top: 1px solid $border-cl;
+	padding-top: 3rem;
+	> div ~ div {
+		margin-top: 6rem;
+	}
+}
+.pd-desc-item {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	.title {
+		text-transform: uppercase;
+		color: $main-cl;
+		font-weight: 600;
+		width: calc(100% / 3 * 1 - 3rem);
+	}
+	.content {
+		width: calc(100% / 3 * 2);
+		.col {
+			width: 25%;
+			&:only-child {
+				width: 100%;
+			}
+		}
+		.sub-tt {
+			font-size: 1.4rem;
+		}
+		.tt {
+			color: $t-b-cl;
+		}
+	}
+
+	.download {
+		display: flex;
+		align-items: center;
+
+		~ div {
+			margin-top: 2rem;
+		}
+		.tt:hover {
+			color: $main-cl;
+		}
+	}
+	.icon {
+		width: 3rem;
+		height: 3rem;
+		margin-right: 2rem;
+		border-radius: 99rem;
+		background-color: $third-cl;
+		a {
+			height: 100%;
+			@include mid-flex;
+		}
+		img {
+			transition: $t1;
+			filter: grayscale(1);
+		}
+		&:hover {
+			img {
+				filter: none;
+			}
+		}
+	}
+}
+@include max-media($bk-d-992) {
+	.pd-desc-list {
+		padding-top: 2rem;
+		> div ~ div {
+			margin-top: 3rem;
+		}
+	}
+	.pd-desc-item {
+		flex-wrap: wrap;
+
+		.title {
+			width: 100%;
+		}
+		.content {
+			width: 100%;
+			margin-top: 2rem;
+		}
+	}
+}
+@include max-media($bk-d-768) {
+	.pd-desc-item {
+		.content {
+			.col {
+				width: calc(100% / 3);
+			}
+		}
+	}
+}
