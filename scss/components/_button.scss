@@ -138,9 +138,11 @@
 }
 
 .video-btn,
+.video-local-btn,
 .video-popup {
 	display: block;
 	position: relative;
+	cursor: pointer;
 	&::before {
 		content: '';
 		position: absolute;
@@ -163,7 +165,8 @@
 		background-position: center center;
 		z-index: 2;
 		border-radius: 99rem;
-		animation: pulse 3s infinite;
+		animation: pulse-video-btn 3s infinite;
+		pointer-events: none;
 	}
 	img {
 		width: 100%;

@@ -36,7 +36,7 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<div id="page-loading">
+			<!-- <div id="page-loading">
 				<div class="page-loading-bg"></div>
 				<div class="page-loading-wrap">
 					<div class="page-loading-logo">
@@ -59,7 +59,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<header class="header">
 				<div class="container">
 					<div class="header-inner">
@@ -75,6 +75,15 @@
 											<div class="dropdown-wrap">
 												<div class="dropdown-col">
 													<a href="#">Sản phẩm</a>
+													<div class="prev-btn">
+														<div class="icon">
+															<i
+																class="fa fa-angle-left"
+																aria-hidden="true"
+															></i>
+														</div>
+														<p>Sản phẩm</p>
+													</div>
 													<div>
 														<ul class="dropdown-list">
 															<li class="dropdown-item">
@@ -289,25 +298,48 @@
 									</li>
 									<li><a href="#">Đại lý</a></li>
 								</ul>
+								<div class="lang-mobile">
+									<a href="#" class="--active">
+										VN <img src="images/icon-vn.png" alt="" />
+									</a>
+									<a href="#"> EN <img src="images/icon-vn.png" alt="" /> </a>
+								</div>
+								<ul class="social-mobile">
+									<li>
+										<a href="#" target="_blank" class="square-30fa">
+											<i class="fa fa-facebook-official"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#" target="_blank" class="square-30fa">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#" target="_blank" class="square-30fa">
+											<i class="fa fa-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-skype" aria-hidden="true"></i>
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 						<div class="header__list-wrap header__list-wrap-mobile">
 							<div class="header__list-inner">
-								<div class="header__mobile">
-									<div class="hamburger-btn">
-										<span></span>
-										<span></span>
-										<span></span>
-										<span></span>
-									</div>
-								</div>
-								<div class="logo">
-									<a href="#"><img src="images/logo.png" alt="logo" /></a>
-								</div>
 								<ul class="header__list">
 									<li class="dropdown current-menu-item">
 										<a href="#">Sản phẩm</a>
 										<div class="sub-menu">
+											<div class="prev-btn">
+												<div class="icon">
+													<i class="fa fa-angle-left" aria-hidden="true"></i>
+												</div>
+												<p>Sản phẩm</p>
+											</div>
 											<ul>
 												<li class="dropdown">
 													<a href="#">Ovens</a>
@@ -462,7 +494,6 @@
 									</li>
 								</ul>
 							</div>
-							<div class="overlay"></div>
 						</div>
 						<div class="header-compare">
 							<a href="#">
@@ -934,14 +965,7 @@
 				<section class="banner">
 					<div class="banner-slider" data-aos="fade">
 						<div class="container">
-							<div
-								class="
-									is-slider is-slider-common
-									--auto
-									--loop
-									--swiper-navigate-2
-								"
-							>
+							<div class="is-slider --swiper-navigate-2 --auto">
 								<div class="swiper-container">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
@@ -951,6 +975,7 @@
 													alt="Banner home"
 													title="Banner home"
 												/>
+												<div class="banner-sale">-20%</div>
 											</div>
 										</div>
 										<div class="swiper-slide">
@@ -960,6 +985,7 @@
 													alt="Banner home"
 													title="Banner home"
 												/>
+												<div class="banner-sale">-20%</div>
 											</div>
 										</div>
 										<div class="swiper-slide">
@@ -969,6 +995,7 @@
 													alt="Banner home"
 													title="Banner home"
 												/>
+												<div class="banner-sale">-20%</div>
 											</div>
 										</div>
 									</div>
@@ -985,7 +1012,8 @@
 						<div class="container">
 							<div class="banner-list">
 								<div
-									class="banner-item"
+									class="banner-item --active"
+									data-id="0"
 									data-aos="fade-up"
 									data-aos-delay="100"
 								>
@@ -1000,6 +1028,7 @@
 								</div>
 								<div
 									class="banner-item"
+									data-id="1"
 									data-aos="fade-up"
 									data-aos-delay="200"
 								>
@@ -1015,7 +1044,8 @@
 									</div>
 								</div>
 								<div
-									class="banner-item --active"
+									class="banner-item"
+									data-id="2"
 									data-aos="fade-up"
 									data-aos-delay="300"
 								>
@@ -1032,6 +1062,9 @@
 									</div>
 								</div>
 							</div>
+						</div>
+						<div class="banner-content-btn-mobile">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
 						</div>
 					</div>
 				</section>
@@ -2071,6 +2104,166 @@
 				</div>
 				<div class="overlay overlay-cart"></div>
 			</div>
+			<!-- POPUP -->
+			<!-- <div class="popup-wrap" id="popup-cart-detail">
+				<div class="cart-detail">
+					<div class="cart">
+						<div class="cart-wrap">
+							<div class="cols">
+								<div class="col left">
+									<div class="cart-left">
+										<p class="cart-title tt-20 t-uppercase f-bold --mb-15">
+											Giỏ hàng
+										</p>
+										<div class="cart-list">
+											<div class="cart-item">
+												<div class="c-cart">
+													<div class="c-cart-img">
+														<a href="#">
+															<img src="images/c-cart.jpg" alt="" />
+														</a>
+													</div>
+													<div class="c-cart-content">
+														<div class="c-cart-title">
+															<p class="--m-cl"><b>8H-198ADTCN</b></p>
+															<p>Multifinction ovens</p>
+															<p><b>Mã đặt hàng:</b> 1111.1111</p>
+														</div>
+														<div class="c-cart-price">
+															<p>12,000,000đ</p>
+														</div>
+														<div class="c-cart-remove">
+															<a href="#">
+																<i
+																	class="fa fa-plus-circle"
+																	aria-hidden="true"
+																></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cart-item">
+												<div class="c-cart">
+													<div class="c-cart-img">
+														<a href="#">
+															<img src="images/c-cart.jpg" alt="" />
+														</a>
+													</div>
+													<div class="c-cart-content">
+														<div class="c-cart-title">
+															<p class="--m-cl"><b>8H-198ADTCN</b></p>
+															<p>Multifinction ovens</p>
+															<p><b>Mã đặt hàng:</b> 1111.1111</p>
+														</div>
+														<div class="c-cart-price">
+															<p>12,000,000đ</p>
+														</div>
+														<div class="c-cart-remove">
+															<a href="#">
+																<i
+																	class="fa fa-plus-circle"
+																	aria-hidden="true"
+																></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cart-item">
+												<div class="c-cart">
+													<div class="c-cart-img">
+														<a href="#">
+															<img src="images/c-cart.jpg" alt="" />
+														</a>
+													</div>
+													<div class="c-cart-content">
+														<div class="c-cart-title">
+															<p class="--m-cl"><b>8H-198ADTCN</b></p>
+															<p>Multifinction ovens</p>
+															<p><b>Mã đặt hàng:</b> 1111.1111</p>
+														</div>
+														<div class="c-cart-price">
+															<p>12,000,000đ</p>
+														</div>
+														<div class="c-cart-remove">
+															<a href="#">
+																<i
+																	class="fa fa-plus-circle"
+																	aria-hidden="true"
+																></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="cart-total">
+											<p><b>Tổng tiền:</b></p>
+											<p class="--m-cl">36,000,000đ</p>
+										</div>
+									</div>
+								</div>
+								<div class="col right">
+									<div class="cart-form-wrap">
+										<p class="cart-title tt-20 t-uppercase f-bold --mb-30">
+											Thông tin đặt hàng
+										</p>
+										<p class="--mb-20">
+											Để lại thông tin đặt hàng, chúng tôi sẽ liên hệ cho bạn
+											trong thời gian sớm nhất
+										</p>
+										<form class="cart-form">
+											<div style="display: none"></div>
+											<div class="f-group">
+												<label for="name" class="f-label"
+													>Họ tên khách hàng</label
+												>
+												<input type="text" id="name" class="f-control" />
+											</div>
+											<div class="f-group">
+												<label for="email" class="f-label">Email</label>
+												<input type="email" id="email" class="f-control" />
+											</div>
+											<div class="f-group">
+												<label for="phone" class="f-label">Số điện thoại</label>
+												<input type="text" id="phone" class="f-control" />
+											</div>
+											<div class="f-group">
+												<label for="address" class="f-label">Địa chỉ</label>
+												<input type="text" id="address" class="f-control" />
+											</div>
+											<div class="f-group">
+												<label for="ara" class="f-label">Khu vực</label>
+												<input type="text" id="ara" class="f-control" />
+											</div>
+											<div class="f-group">
+												<label for="subject" class="f-label">Tiêu đề</label>
+												<input type="text" id="subject" class="f-control" />
+											</div>
+											<div class="f-group">
+												<label for="note" class="f-label">Tin nhắn</label>
+												<textarea
+													name=""
+													id="note"
+													cols="30"
+													rows="10"
+													class="f-control"
+												></textarea>
+											</div>
+											<div class="f-submit">
+												<button type="submit" class="main-btn">
+													Gửi đơn hàng
+												</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
 		</div>
 		<!-- JQUERY -->
 		<script src="js/libs/jquery-1.12.4.min.js"></script>

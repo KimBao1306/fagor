@@ -119,9 +119,6 @@
 				}
 			}
 		}
-		.social {
-			display: none;
-		}
 	}
 }
 @include max-media($bk-d-600) {
@@ -138,6 +135,9 @@
 			> p {
 				margin-bottom: 1rem;
 			}
+		}
+		.social {
+			display: none;
 		}
 	}
 }

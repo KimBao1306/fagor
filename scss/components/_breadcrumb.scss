@@ -8,6 +8,7 @@
 	color: $five-cl;
 
 	> p {
+    flex-shrink: 0;
 		margin-right: 2rem;
 	}
 }
@@ -38,13 +39,22 @@
 		}
 	}
 	a {
-		display: block;
+		display: inline-block;
 		padding-right: 1.5rem;
 		transition: $t1 $cubic1;
 		&:hover {
 			color: $main-cl;
 			path {
 				fill: $main-cl;
+			}
+		}
+		~ a {
+			position: relative;
+			&:before {
+				content: ',';
+				position: absolute;
+				left: -1.4rem;
+				color: $five-cl;
 			}
 		}
 	}
@@ -61,4 +71,7 @@
 	.sec-breadcrumb {
 		padding: 2rem 0;
 	}
+  .sec-breadcrumb-inner {
+    flex-wrap: wrap;
+  }
 }

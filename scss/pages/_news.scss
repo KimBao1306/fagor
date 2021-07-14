@@ -32,32 +32,6 @@
 .news-pagination {
 	.pagination {
 		li {
-			.fa {
-				color: #127226;
-				transition: $t1;
-			}
-			&:first-child {
-				margin-right: 3rem;
-				.fa {
-					margin-right: 0.5rem;
-				}
-				&:hover {
-					.fa {
-						transform: translateX(-0.2rem);
-					}
-				}
-			}
-			&:last-child {
-				margin-left: 3rem;
-				.fa {
-					margin-left: 0.5rem;
-				}
-				&:hover {
-					.fa {
-						transform: translateX(0.2rem);
-					}
-				}
-			}
 		}
 	}
 }

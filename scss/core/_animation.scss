@@ -79,3 +79,20 @@
 		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
 	}
 }
+
+@keyframes pulse-video-btn {
+	0% {
+		transform: translate(-50%, -50%) scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+	}
+
+	70% {
+		transform: translate(-50%, -50%) scale(1);
+		box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+	}
+}

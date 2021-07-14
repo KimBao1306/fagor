@@ -28,19 +28,27 @@
 	}
 }
 .store-maps {
+	padding-bottom: 3rem;
+	margin-bottom: 3rem;
+	border-bottom: 1px solid rgba($color: $bg-b-cl, $alpha: 0.3);
 	.left {
 		width: 67.70833333%;
 	}
-
 	.right {
 		margin-left: auto;
 		width: calc(100% - 67.7083% - 1rem);
+	}
+	&:last-child {
+		padding-bottom: 0;
+		margin-bottom: 0;
+		border: 0;
 	}
 }
 .maps {
 	background-image: url(../images/loading-2.svg);
 	background-repeat: no-repeat;
 	background-position: center;
+	height: 100%;
 	iframe {
 		display: block;
 		width: 100%;

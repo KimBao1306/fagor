@@ -36,14 +36,17 @@ html {
 	}
 }
 .mfp-container {
-	padding: 0;
+	padding: 1.5rem;
 	overflow-y: auto;
 	@include custom-scrollbar(2px);
 }
+video {
+	width: 100%;
+}
 .mfp-content {
-	max-width: 60rem;
+	max-width: 90rem;
 	.mfp-close {
-		color: #e44a7a;
+		color: $main-cl;
 		transition: 0.3s;
 		right: 0;
 	}
@@ -68,4 +71,45 @@ html {
 }
 .swal2-shown {
 	padding-right: 0 !important;
+}
+#popup-video {
+	.mfp-close {
+		top: -44px;
+	}
+}
+#popup-cart-detail {
+	.cart {
+		position: static;
+		width: 100%;
+	}
+	.cart-wrap {
+		position: static;
+		width: 100%;
+		&:before {
+			display: none;
+		}
+	}
+	.left {
+		width: 50%;
+	}
+	.right {
+		width: 50%;
+	}
+
+	.cart-left,
+	.cart-form-wrap {
+		padding-top: 4.4rem;
+	}
+	.cart-left {
+		background-color: transparent;
+	}
+	.cart-form-wrap {
+		background-color: #f6f8fa;
+	}
+	.f-control {
+		background-color: $bg-w-cl;
+	}
+	.cart-list {
+		max-height: 60.4rem;
+	}
 }

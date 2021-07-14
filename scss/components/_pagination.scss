@@ -23,6 +23,51 @@
 				color: $t-w-cl;
 			}
 		}
+		.fa {
+			color: #127226;
+			transition: $t1;
+		}
+		.prev,
+		.next {
+			width: auto;
+			height: auto;
+
+			&:hover {
+				background-color: transparent;
+				color: $main-cl;
+			}
+		}
+		.prev {
+			margin-right: 3rem;
+			.fa {
+				margin-right: 0.5rem;
+			}
+			&:hover {
+				.fa {
+					transform: translateX(-0.2rem);
+				}
+			}
+		}
+		.next {
+			margin-left: 3rem;
+			.fa {
+				margin-left: 0.5rem;
+			}
+			&:hover {
+				.fa {
+					transform: translateX(0.2rem);
+				}
+			}
+		}
+    @include max-media($bk-d-768) {
+      .prev {
+        margin-right: 1.5rem;
+      }
+      .next {
+        margin-left: 1.5rem;
+        
+      }
+    }
 	}
 	a {
 		transition: $t1;

@@ -74,9 +74,9 @@
 		a {
 			color: $second-cl;
 		}
-		li:last-child a {
-			font-size: 0.8rem;
-		}
+		// li:last-child a {
+		// 	font-size: 0.8rem;
+		// }
 	}
 }
 .pd-list {
@@ -106,15 +106,26 @@
 			width: 50%;
 		}
 	}
+
+	.pd-pagination {
+		margin-right: 2rem;
+	}
 }
 @include max-media($bk-d-768) {
 	.pd-title {
+		flex-wrap: wrap;
 		> p {
+			width: 100%;
 			position: static;
 		}
 	}
 	.pd-pagination {
-		margin-right: 0;
+		width: 100%;
+		margin-top: 1rem;
+		margin-right: auto;
+		.pagination {
+			text-align: left;
+		}
 	}
 	.pd-list {
 		.col {
@@ -318,6 +329,7 @@
 			position: absolute;
 			top: 0.5rem;
 			right: 1rem;
+			z-index: 1;
 			background-color: $bg-w-cl;
 			border-radius: 99rem;
 		}

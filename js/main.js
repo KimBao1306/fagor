@@ -15,7 +15,8 @@ import TabModule from './modules/TabModule.js';
 import ViewportModule from './modules/ViewportModule.js';
 
 jQuery(document).ready(function ($) {
-	LoadingModule(AosModule);
+	// LoadingModule(AosModule);
+	AosModule();
 	HeaderModule();
 	HeaderDropdownModule();
 	HeaderFixedModule();

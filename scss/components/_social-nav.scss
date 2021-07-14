@@ -1,7 +1,7 @@
 .social-mobile {
 	width: 100%;
 	padding: 1.5rem;
-	justify-content: center;
+	justify-content: flex-start;
 	display: none;
 	@include max-media($bk-d-1200) {
 		display: flex;

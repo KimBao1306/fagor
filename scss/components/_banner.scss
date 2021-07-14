@@ -45,28 +45,29 @@
 		display: none;
 	}
 	.swiper-wrapper {
-		margin: -0.5rem;
+		margin: 0;
 	}
 	.swiper-slide {
-		padding: 0.5rem;
+		padding: 0;
 	}
 	.swiper-button-wrap {
-		background-color: rgba($color: $bg-b-cl, $alpha: 0.3);
-		bottom: 6rem;
-		padding: 0.5rem;
-		border-radius: 99rem;
-		transform: translate(-50%, 2rem);
-		transition: $t1;
-		@include hidden;
+		transform: translateX(-50%);
 	}
-	&:hover {
-		.swiper-button-wrap {
-			transform: translate(-50%, 0);
-			@include visible;
-		}
+	.swiper-button-prev,
+	.swiper-button-next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.swiper-button-prev {
+		left: 1.6rem;
+	}
+	.swiper-button-next {
+		right: 1.6rem;
 	}
 }
 .banner-img {
+	position: relative;
 	width: 100%;
 	height: 100%;
 	img {
@@ -76,9 +77,35 @@
 		object-fit: cover;
 	}
 }
+.banner-sale {
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	width: 8rem;
+	height: 8rem;
+	z-index: 2;
+	background-color: $main-cl;
+	border-radius: 50%;
+	@include fz-24;
+	color: $t-w-cl;
+	line-height: 8rem;
+	text-align: center;
+}
 .banner-content {
 	position: relative;
 	z-index: 3;
+}
+.banner-content-btn-mobile {
+	position: absolute;
+	top: 0;
+	right: 1.5rem;
+	z-index: 2;
+	width: 3rem;
+	height: 100%;
+	background-color: #e4e7eb;
+	display: none;
+	align-items: center;
+	justify-content: center;
 }
 .banner-list {
 	display: flex;
@@ -109,8 +136,7 @@
 	.desc > p {
 		@include overtext(5);
 	}
-	&.--active,
-	&:hover {
+	&.--active {
 		box-shadow: -0.3rem -0.3rem 0.6rem rgba($color: $bg-b-cl, $alpha: 0.16);
 		> * {
 			transform: translateY(-5rem);
@@ -149,6 +175,11 @@
 		transition: $t1;
 	}
 }
+@include max-media($bk-d-1200) {
+	.banner-img {
+		max-height: 50rem;
+	}
+}
 @include max-media($bk-d-992) {
 	.banner-slider {
 		.swiper-button-wrap {
@@ -156,14 +187,15 @@
 		}
 	}
 	.banner-list {
+		position: relative;
 		overflow: auto hidden;
-		scroll-snap-type: x mandatory;
+		// scroll-snap-type: x mandatory;
 		@include custom-vertical-scrollbar(0.3rem);
 	}
 	.banner-item {
 		width: calc((100% - 8rem) / 2);
 		flex-shrink: 0;
-		scroll-snap-align: start;
+		// scroll-snap-align: start;
 		padding: 2rem 3rem;
 		&:hover,
 		&.--active {
@@ -178,6 +210,12 @@
 }
 @include max-media($bk-d-768) {
 	.banner-item {
-		width: calc(100% - 5rem);
+		width: 100%;
+	}
+	.banner-content {
+		padding-right: 3rem;
+	}
+	.banner-content-btn-mobile {
+		display: flex;
 	}
 }

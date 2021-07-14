@@ -146,7 +146,8 @@
 	.img-main {
 		position: relative;
 		padding-bottom: 68%;
-		img {
+		img,
+		video {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -159,6 +160,7 @@
 		position: absolute;
 		left: 1.5rem;
 		bottom: 0;
+		z-index: 2;
 		img {
 			width: 100%;
 			object-fit: cover;
@@ -198,18 +200,8 @@
 	}
 
 	.pd-info-list {
-		.swiper-wrapper {
-			flex-wrap: nowrap;
-		}
 		.swiper-slide {
 			width: 50%;
-		}
-
-		.swiper-button-wrap {
-			position: static;
-			transform: none;
-			display: flex;
-			justify-content: flex-end;
 		}
 	}
 }

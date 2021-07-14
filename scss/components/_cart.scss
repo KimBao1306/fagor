@@ -29,6 +29,8 @@
 }
 @include max-media($bk-d-992) {
 	.cart-btn {
+		top: auto;
+		bottom: 25rem;
 		min-width: 3rem;
 		img {
 			margin-right: 0;
@@ -50,6 +52,10 @@
 	&.--active {
 		left: 0;
 	}
+}
+
+.widget_shopping_cart_content {
+	height: 100%;
 }
 .cart-close {
 	position: absolute;
@@ -232,11 +238,16 @@
 	&-remove {
 		position: relative;
 		width: 6%;
+
 		// width: 1.8rem;
 		font-size: 1.8rem;
 		.fa {
 			position: absolute;
 			transform: rotate(45deg);
+		}
+		&:hover a.remove.remove {
+			color: $main-cl !important;
+			background-color: transparent !important;
 		}
 	}
 }
@@ -323,5 +334,11 @@
 				position: static;
 			}
 		}
+	}
+}
+@include max-media($bk-d-600) {
+	.c-cart-remove.c-cart-remove {
+		display: inline-block;
+		width: auto;
 	}
 }
